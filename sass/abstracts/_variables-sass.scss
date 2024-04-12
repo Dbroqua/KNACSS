@@ -52,6 +52,7 @@ $spacer-ultra: map-get($spacers, "36");
 // ----------------
 
 $grid-columns: 6 !default;
+$grid-rows: 6 !default;
 
 $gaps: (
   "0": 0,

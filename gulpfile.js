@@ -1,5 +1,6 @@
 const gulp = require('gulp');
-var sass = require('gulp-sass');
+const dart = require('sass');
+var sass = require('gulp-sass')(dart);
 var postcss = require('gulp-postcss');
 var CombineMQ = require('postcss-combine-media-query');
 var autoprefixer = require('autoprefixer');
@@ -22,13 +23,13 @@ gulp.task('css:mini', () => {
   return gulp.src('sass/knacss.scss')
     .pipe(sass(
       {
-      outputStyle: 'compact'
+      outputStyle: 'compressed'
       }))
     .pipe(
       postcss([
         CombineMQ, // rassemble les Media Queries (parfait pour les classes utilitaires)
         autoprefixer, // ajoute les préfixes vendeurs
-        CSSnano // minification 
+        CSSnano // minification
       ]))
     .pipe(gulp.dest('css/knacss-mini'));
 });
@@ -43,7 +44,7 @@ gulp.task('css:grillade', () => {
       postcss([
         CombineMQ, // rassemble les Media Queries (parfait pour les classes utilitaires)
         autoprefixer, // ajoute les préfixes vendeurs
-        CSSnano // minification 
+        CSSnano // minification
       ]))
     .pipe(gulp.dest('css/grillade'));
 });

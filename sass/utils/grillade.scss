@@ -12,6 +12,12 @@
   $grid-columns: 6 !global;
 }
 
+@if variable_exists(grid-rows) {
+  $grid-rows: $grid-rows !global;
+} @else {
+  $grid-rows: 6 !global;
+}
+
 @if variable_exists(gaps) {
   $gaps: $gaps !global;
 } @else {
@@ -96,7 +102,7 @@
 }
 
 /* grid-items initialisation */
-@for $i from 1 through $grid-columns {
+@for $i from 1 through $grid-columns + 1 {
   .col-start-#{$i} {
     grid-column-start: #{$i};
   }
@@ -109,6 +115,8 @@
   .col-span-full {
     grid-column: 1 / -1;
   }
+}
+@for $i from 1 through $grid-rows + 1 {
   .row-start-#{$i} {
     grid-row-start: #{$i};
   }
@@ -138,6 +146,9 @@
       .#{$bp}\:col-span-full {
         grid-column: 1 / -1;
       }
+    }
+    @for $i from 1 through $grid-rows {
+      // loop for each breakpoint
       .#{$bp}\:row-start-#{$i} {
         grid-row-start: #{$i};
       }

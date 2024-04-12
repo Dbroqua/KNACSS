@@ -1,5 +1,6 @@
 # Changelog
 
+- 12 avril 2024 (8.2.2) : Modification sur les grillades
 - 24 janvier 2022 (8.2.1) : corrections des radio / checkbox
 - 19 janvier 2022 (8.2) : refonte des variables d'espacement
 - 5 janvier 2022 (8.1) : refonte des variables de couleur
@@ -13,6 +14,11 @@
 - 19 mai 2020 : fichier de composant `button.scss` et mixin Sass
 - 29 février 2020 : feuille de style accessibilité
 - 13 février 2020 : on repart de zéro...
+
+## Changelog v8.2.2
+
+- Introduction de la variable grid-rows (même principe que grid-colums)
+- Correction d'un bug sur col-end- afin de pouvoir placer un élément sur la dernière colonne (grid-colums + 1)
 
 ## Changelog 2020
 
